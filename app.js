@@ -12,7 +12,7 @@ function initApp() {
     
     // Set program start date (30 days ago)
     appData.programStartDate = new Date();
-    appData.programStartDate.setDate(appData.programStartDate.getDate() - 30);
+    appData.programStartDate.setDate(appData.programStartDate.getDate() - 10);
     
     // Create initial 6 meals
     for (let i = 0; i < 6; i++) {
