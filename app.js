@@ -252,7 +252,7 @@ function exportData() {
             data: document.getElementById('data').value,
             denProgrammy: document.getElementById('denProgrammy').value,
             vremyaPodema: document.getElementById('vremyaPodema').value,
-            nastroiNaSnijenie: document.getElementById('nastroiNaSnijenie').checked,
+            nastroiNaSnijenie: document.getElementById('nastroiNaSnijenie').value,
             sbroshenoTotal: document.getElementById('sbroshenoTotal').value,
             sbroshenoZa7: document.getElementById('sbroshenoZa7').value,
             oteki: document.getElementById('oteki').value,
