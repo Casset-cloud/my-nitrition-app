@@ -1,0 +1,40 @@
+# login.html — страница входа для фронтенда
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Дневник питания — Вход</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <h2>Добро пожаловать!</h2>
+    <form id="login-form">
+      <label>Логин<br>
+        <input type="text" id="login-username" placeholder="Ваш логин" required>
+      </label>
+      <button type="submit">Войти</button>
+      <p id="login-error" style="color:red"></p>
+    </form>
+  </div>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const username = document.getElementById('login-username').value.trim();
+      if (!username) return;
+      const res = await fetch('/api/auth/login', {
+        method: 'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({username})
+      });
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem('user_id', data.user_id);
+        location.href = '/';
+      } else {
+        document.getElementById('login-error').textContent = data.error || 'Ошибка входа';
+      }
+    });
+  </script>
+</body>
+</html>
