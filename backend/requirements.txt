@@ -1,0 +1,5 @@
+# requirements.txt — список Python-зависимостей проекта
+
+Flask
+flask-cors
+Jinja2
